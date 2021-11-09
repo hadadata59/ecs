@@ -1,21 +1,145 @@
 ---
 - name: software
-  title: Software
+  title: software
   group: 2
-  short: Fields to describe the software relevant to the event.
   description: >
-    The software fields describe information about the software that is relevant
-    to the event.
   reusable:
     top_level: true
     expected:
+      - client
+      - server
+      - host
+      - source
+      - destination
+      - observer
       - cloud
-
+      
   type: group
   fields:
-
-    - name: build_version
+   - name: description
       level: extended
       type: keyword
-      example: A94A8FE5CCB19BA61C4C0873D391E987982FBBD3
-      description: Version of the build.
+      description: Description of the package.
+      example: Open source programming language to build simple/reliable/efficient software.
+
+    - name: size
+      format: string
+      level: extended
+      type: long
+      description: Package size in bytes.
+      example: 62231
+    
+    - name: path
+      level: extended
+      type: keyword
+      description: Path where the package is installed.
+      example: /usr/local/Cellar/go/1.12.9/
+
+    - name: architecture
+      level: extended
+      type: keyword
+      description: Package architecture.
+      example: x86_64
+
+    - name: checksum
+      level: extended
+      type: keyword
+      description: Checksum of the installed package for verification.
+      example: 68b329da9893e34099c7d8ad5cb9c940
+
+    - name: install_scope
+      level: extended
+      type: keyword
+      description: Indicating how the package was installed, e.g. user-local, global.
+      example: global
+
+    - name: license
+      level: extended
+      type: keyword
+      short: Package license
+      description: >
+        License under which the software was released.
+        Use a short name, e.g. the license identifier from SPDX License List where possible (https://spdx.org/licenses/).
+      example: Apache License 2.0
+
+    - name: reference
+      level: extended
+      type: keyword
+      short: Package home page or reference URL
+      description: >
+        Home page or vendor reference URL for the software, if available.
+      example: https://golang.org  
+
+    - name: change_status
+      level: custom
+      type: keyword
+      description: Describes how the state of the software has changed
+      example: removed
+
+    - name: install.state
+      level: custom
+      type: keyword
+      description: Software installation state
+      example: installed
+
+    - name: installed
+      level: custom
+      type: date
+      description: Time the software was installed
+
+    - name: ip
+      level: custom
+      type: ip
+      description: The IP address running the software.
+
+    - name: modules.install.state
+      level: custom
+      type: keyword
+      description: Module installation state
+      example: installed
+
+    - name: modules.name
+      level: custom
+      type: keyword
+      description: Module name within a software suite.
+      example: Anti-spyware protection
+
+    - name: name
+      level: custom
+      type: keyword
+      description: Name of the software (e.g. Apache)
+      example: Apache
+
+    - name: patch.kb
+      level: custom
+      type: keyword
+      description: Software patch ID
+      example: KB4538461
+
+    - name: port
+      level: custom
+      type: long
+      description: The port on which the software is running.
+
+    - name: state
+      level: custom
+      type: keyword
+      description: Current state of the software
+      example: running
+
+    - name: type
+      level: custom
+      type: keyword
+      description: Software type 
+      example: HTTP::SERVER
+
+    - name: uninstall
+      level: custom
+      type: keyword
+      description: Software uninstall string
+
+    - name: version
+      level: custom
+      type: keyword
+      description: The software version.
+

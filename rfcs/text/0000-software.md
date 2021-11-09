@@ -12,8 +12,14 @@ Feel free to remove these comments as you go along.
 <!--
 Stage 0: Provide a high level summary of the premise of these changes. Briefly describe the nature, purpose, and impact of the changes. ~2-5 sentences.
 -->
+The nature of the change is:
+Adding software. object to ECS.  
+Allowing reuse for cloud. object to eliminate confusion software as a service and the ECS service. object.
+Allowing reuse of software. object over package. object to allow for UNIX/Linux packages to be deliniated if necessary as 'software packages'.
 
-Adding software. object blah blah blah
+The purpose of this change is to more accurately capture common security operations analyst vernacular, to be more inclusive (as package is a Unix/Linux concept), and to make Software as a Service clearly deliniated from normal server services.
+
+Impact of this change would not break existing ECS implementations.
 <!--
 Stage 1: If the changes include field additions or modifications, please create a folder titled as the RFC number under rfcs/text/. This will be where proposed schema changes as standalone YAML files or extended example mappings and larger source documents will go as the RFC is iterated upon.
 -->
@@ -26,7 +32,7 @@ Stage X: Provide a brief explanation of why the proposal is being marked as aban
 
 <!--
 Stage 1: Describe at a high level how this change affects fields. Include new or updated yml field definitions for all of the essential fields in this draft. While not exhaustive, the fields documented here should be comprehensive enough to deeply evaluate the technical considerations of this change. The goal here is to validate the technical details for all essential fields and to provide a basis for adding experimental field definitions to the schema. Use GitHub code blocks with yml syntax formatting, and add them to the corresponding RFC folder.
--->
+-->This will add a new software object to the fields page (including new yaml file with definitions) and will add reuse in the current baseline's  package object yaml
 
 <!--
 Stage 2: Add or update all remaining field definitions. The list should now be exhaustive. The goal here is to validate the technical details of all remaining fields and to provide a basis for releasing these field definitions as beta in the schema. Use GitHub code blocks with yml syntax formatting, and add them to the corresponding RFC folder.
